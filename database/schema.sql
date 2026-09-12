@@ -117,3 +117,15 @@ INSERT INTO specialties (name, description) VALUES
     ('General Medicine', 'Primary care for everyday health needs.'),
     ('Pediatrics', 'Healthcare for infants, children, and adolescents.')
 ON DUPLICATE KEY UPDATE description = VALUES(description);
+
+INSERT INTO doctors (specialty_id, first_name, last_name, email, phone, qualification, experience_years, bio, consultation_fee)
+SELECT id, 'Rachel', 'Morgan', 'rachel.morgan@carehope.test', '+1 555 010 1001', 'MD, Family Medicine', 12, 'Compassionate primary care for individuals and families.', 75.00 FROM specialties WHERE name = 'General Medicine'
+ON DUPLICATE KEY UPDATE specialty_id = VALUES(specialty_id), qualification = VALUES(qualification), experience_years = VALUES(experience_years), bio = VALUES(bio), consultation_fee = VALUES(consultation_fee);
+
+INSERT INTO doctors (specialty_id, first_name, last_name, email, phone, qualification, experience_years, bio, consultation_fee)
+SELECT id, 'James', 'Allen', 'james.allen@carehope.test', '+1 555 010 1002', 'MD, Cardiology', 15, 'Focused on helping patients build healthier hearts and lives.', 110.00 FROM specialties WHERE name = 'Cardiology'
+ON DUPLICATE KEY UPDATE specialty_id = VALUES(specialty_id), qualification = VALUES(qualification), experience_years = VALUES(experience_years), bio = VALUES(bio), consultation_fee = VALUES(consultation_fee);
+
+INSERT INTO doctors (specialty_id, first_name, last_name, email, phone, qualification, experience_years, bio, consultation_fee)
+SELECT id, 'Sofia', 'Patel', 'sofia.patel@carehope.test', '+1 555 010 1003', 'MD, Dermatology', 10, 'Evidence-based skin care with a personal approach.', 95.00 FROM specialties WHERE name = 'Dermatology'
+ON DUPLICATE KEY UPDATE specialty_id = VALUES(specialty_id), qualification = VALUES(qualification), experience_years = VALUES(experience_years), bio = VALUES(bio), consultation_fee = VALUES(consultation_fee);
