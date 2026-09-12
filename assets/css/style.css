@@ -187,6 +187,8 @@ h1 { max-width: 12ch; margin-bottom: 1.25rem; font-size: clamp(2.5rem, 5vw, 4.55
     .nav-login { margin-left: 0; }
     .primary-nav .button { margin-top: .5rem; }
     .hero-grid, .feature-grid, .footer-grid, .split-content, .doctor-grid, .profile-details, .contact-layout, .auth-card, .dashboard-layout { grid-template-columns: 1fr; }
+    .hero-grid, .feature-grid, .footer-grid, .split-content, .doctor-grid, .profile-details, .contact-layout { grid-template-columns: 1fr; }
+    .hero-grid, .feature-grid, .footer-grid { grid-template-columns: 1fr; }
     .hero { padding-top: 4rem; }
     .hero-panel { min-height: 350px; }
     .panel-note { right: .6rem; }
