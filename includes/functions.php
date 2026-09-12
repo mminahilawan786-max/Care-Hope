@@ -18,3 +18,10 @@ function navIsActive(string $page): string
 {
     return currentPage() === $page ? 'is-active' : '';
 }
+
+/** Redirect and stop execution. */
+function redirect(string $path): never
+{
+    header("Location: {$path}");
+    exit;
+}
